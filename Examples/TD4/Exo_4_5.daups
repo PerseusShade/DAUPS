@@ -1,0 +1,17 @@
+Algo
+    i, j, grand : int
+    tab : array of int
+Begin
+    tab <-- create_array(12, 8)
+    for i <-- 0 to 11
+        for j <-- 0 to 7
+            print "Quel est l'élément de la ligne ", i + 1, " et de la colonne ", j + 1, " ?", "Saut-de-ligne"
+            get tab[i][j]
+
+    grand <-- tab[0][0]
+    for i <-- 0 to 11
+        for j <-- 0 to 7
+            if tab[i][j] > grand then
+                grand <-- tab[i][j]
+    print "le nombre maximum est ", grand, "Saut-de-ligne"
+End

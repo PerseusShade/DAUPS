@@ -1,0 +1,24 @@
+Algo
+#calcule x^n
+    x : float
+    n : int
+    i : int #compteur
+    r : float #variable stockant le résultat
+Begin
+    print "Quelle est la valeur de x ?"
+    get x
+    while (x<0)
+        print "x ne peut pas etre négatif, entrez une autre valeur !"
+        get x
+    print "Quelle est la valeur de n ?"
+    get n
+    while (n<0)
+        print "n ne peut pas être négatif, entrez une autre valeur!"
+        get n
+    i <-- 0
+    r <-- 1
+    while (i<n)
+        r <-- r*x
+        i <-- i+1
+    print r
+End

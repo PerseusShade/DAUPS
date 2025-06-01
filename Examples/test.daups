@@ -1,0 +1,3 @@
+x : int
+y : float
+x <-- y  # Erreur

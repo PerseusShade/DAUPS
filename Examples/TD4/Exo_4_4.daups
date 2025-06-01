@@ -1,0 +1,12 @@
+Algo
+    i, j : int
+    tab : array of int
+Begin
+    tab <-- create_array(4, 2)
+    for i <-- 0 to 3
+        for j <-- 0 to 1
+            tab[i][j] <-- 2 * i + j
+    for i <-- 0 to 3
+        for j <-- 0 to 1
+            print tab[i][j], "Saut-de-ligne"
+End

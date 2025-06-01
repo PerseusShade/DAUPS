@@ -1,0 +1,51 @@
+{
+    "name": "DAUPS",
+    "scopeName": "source.daups",
+    "patterns": [
+        {
+            "name": "support.type.builtin.daups",
+            "match": "\\b(int|float|bool|str|array|of)\\b"
+        },
+        {
+            "include": "#keywords"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.daups",
+                    "match": "\\b(Algo|Begin|End|function)\\b"
+                },
+                {
+                    "name": "keyword.control.flow.daups",
+                    "match": "\\b(if|then|else|for|while|to|downto|return|or|and)\\b"
+                },
+                {
+                    "name": "constant.numeric.daups",
+                    "match": "\\b\\d+(\\.\\d+)?\\b"
+                },
+                {
+                    "name": "string.quoted.double.daups",
+                    "match": "\"([^\"\\\\]|\\\\.)*\""
+                },
+                {
+                    "name": "string.quoted.single.daups",
+                    "match": "'([^'\\\\]|\\\\.)*'"
+                },
+                {
+                    "name": "comment.line.number-sign.daups",
+                    "match": "#.*$"
+                },
+                {
+                    "name": "support.function.builtin.daups",
+                    "match": "\\b(create_array|print|get|run|SQRT|nombreAleatoire|size)\\b"
+                },
+                {
+                    "name": "entity.name.function.daups",
+                    "match": "(?<=\\bfunction\\s)([a-zA-Z_][a-zA-Z0-9_]*)"
+                }
+            ]
+        }
+    }
+}

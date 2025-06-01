@@ -1,0 +1,14 @@
+{
+    "FR": {
+        "chapter": "Chapitre",
+        "toc": "Table des matières",
+        "madeBy": "Fait par PerseusShade",
+        "coverTop": "Documentation"
+    },
+    "EN": {
+        "chapter": "Chapter",
+        "toc": "Table of Contents",
+        "madeBy": "Made by PerseusShade",
+        "coverTop": "Documentation"
+    }
+}

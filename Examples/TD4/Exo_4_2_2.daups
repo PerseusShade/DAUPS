@@ -1,0 +1,22 @@
+Algo
+    i, long, long2 : int
+    tab, tab2 : array of int
+Begin
+    get long
+    tab <-- create_array(long)
+    tab2 <-- create_array(long)
+    long2 <-- 0
+
+    for i <-- 0 to long - 1
+        print "Élément en position ", i + 1, " ?", "Saut-de-ligne"
+        get tab[i]
+        if tab[i] >= 0 then
+            tab2[long2] <-- tab[i]
+            long2 <-- long2 + 1
+
+    print "le nouveau tableau contient ", long2, " éléments positifs", "Saut-de-ligne"
+    tab <-- tab2
+
+    for i <-- 0 to long2 - 1
+        print tab[i], "Saut-de-ligne"
+End

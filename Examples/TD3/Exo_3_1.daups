@@ -1,0 +1,16 @@
+function maximum(n1 : float, n2 : float) : float
+    Begin
+        if (n1 > n2) then
+            return n1
+        else
+            return n2
+    End
+
+Algo
+    n1, n2 : float
+Begin
+    print "Saisir deux valeurs"
+    get n1
+    get n2
+    print maximum(n1, n2)
+End

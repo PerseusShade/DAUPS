@@ -1,0 +1,10 @@
+Algo
+    x, y, temp : float
+Begin
+    print "Donner des valeurs numeriques"
+    get x
+    get y
+    temp <-- x
+    x <-- y
+    y <-- temp
+End

@@ -1,0 +1,19 @@
+Algo
+# Tous les nombres parfaits ≤ n
+    n, d, somme : int
+Begin
+    get n
+    while (n > 1)
+        # Chercher les diviseurs de ce nombre n
+        d <-- 1
+        somme <-- 0
+        while (d < n)
+            if ((n mod d) == 0) then
+                # d est un diviseur de n
+                somme <-- somme + d
+            d <-- d + 1
+        if (somme == n) then
+            # n est un nombre parfait
+            print n
+        n <-- n - 1
+End

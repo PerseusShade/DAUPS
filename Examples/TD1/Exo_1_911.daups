@@ -1,0 +1,39 @@
+Algo
+    a, b, c, d, e, f, x, y : int
+Begin
+    get a
+    get b
+    get c
+    get d
+    get e
+    get f
+    if ((d*b)-(e*a))==0 then
+        # les droites ont la même pente
+        # les coeff directeurs sont égaux
+        # a/b==d/e <=> ae=db
+        if b==0 and e==0 then
+            # cas de 2 droites verticales
+            if (c*d)==(f*a) then
+                # 2 droites verticales confondues
+                print "Infinite de solutions"
+            else
+                # les 2 droites verticales sont parallèles
+                print "pas de solution"
+        else
+            if ((b*f)-(e*c))==0 then
+                # droite confondues
+                print "Infinite de solutions"
+            else
+                # les droites sont parallèles
+                print "Pas de solutions"
+    else
+        # ((db-ea)!=0)
+        x <-- ((b*f)-(e*c))/((d*b)-(e*a))
+        if b == 0 then
+            # e!=0
+            y <-- (f/e)-(d/e)*x
+        else
+            y <-- (c/b)-(a/b)*x
+        print "x=", x
+        print "y=", y
+End

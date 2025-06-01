@@ -1,0 +1,20 @@
+function tableMulti(base : int, debut : int, fin : int)
+        n : float
+    Begin
+        print "Fragment de la table de multiplication par", base, ": "
+        n <-- debut
+        while (n <= fin)
+            print n, "x", base, "=", n * base
+            print "Saut-de-ligne"
+            n <-- n + 1
+    End
+
+Algo
+    b, d, f : int
+Begin
+    print "Saisir la base, le début et la fin"
+    get b
+    get d
+    get f
+    tableMulti(b, d, f)
+End

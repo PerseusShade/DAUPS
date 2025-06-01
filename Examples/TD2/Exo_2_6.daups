@@ -1,0 +1,18 @@
+Algo
+# Affichage du tableau
+    nbLignes : int # numéro de la ligne courante
+    i : int # entier à afficher
+    nbCol : int # numéro de la colonne courante
+Begin
+    nbLignes <-- 1
+    while (nbLignes <= 4)
+        nbCol <-- 1
+        i <-- 1
+        while (nbCol <= 5)
+            print i
+            print " "
+            i <-- i + nbLignes
+            nbCol <-- nbCol + 1
+        print "Saut-de-ligne"
+        nbLignes <-- nbLignes + 1
+End

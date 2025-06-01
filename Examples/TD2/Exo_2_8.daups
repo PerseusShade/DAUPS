@@ -1,0 +1,30 @@
+Algo
+# Somme des pairs == Somme des impairs ?
+    n : int
+    si : int # sommes des entiers impairs
+    sp : int # sommes des entiers pairs
+    i : int # compteur
+    e : int # entier saisi
+Begin
+    n <-- 0
+    si <-- 0
+    sp <-- 0
+    while (n <= 0)
+        print "Saisir une valeur positive non nulle :"
+        get n
+    i <-- 0
+    while (i < n)
+        e <-- 0
+        while (e <= 0)
+            print "Saisir un entier positif non nul :"
+            get e
+        if (e mod 2 == 0) then
+            sp <-- sp + e
+        else
+            si <-- si + e
+        i <-- i + 1
+    if (si == sp) then
+        print "La somme des nombres pairs est égale à la somme des nombres impairs."
+    else
+        print "La somme des nombres pairs n'est pas égale à la somme des nombres impairs."
+End

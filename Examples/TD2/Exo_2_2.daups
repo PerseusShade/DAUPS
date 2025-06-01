@@ -1,0 +1,12 @@
+Algo
+# somme des impaires < 100
+    cpt, r : int
+Begin
+    cpt <-- 1
+    r <-- 0
+    while (cpt<= 100)
+        if (cpt mod 2) != 0 then
+            r <-- r + cpt
+        cpt <-- cpt+1
+    print r
+End

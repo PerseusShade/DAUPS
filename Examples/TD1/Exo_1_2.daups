@@ -1,0 +1,8 @@
+Algo
+    x : int
+Begin
+    print "Donner une valeur entiere"
+    get x
+    x <-- x+1
+    print x
+End

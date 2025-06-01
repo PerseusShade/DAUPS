@@ -1,0 +1,138 @@
+{
+	"name": "daups",
+	"displayName": "DAUPS",
+	"description": "Support for DAUPS",
+	"version": "1.0.0",
+	"publisher": "PerseusShade",
+	"type": "module",
+	"icon": "icon.png",
+	"engines": {
+		"vscode": "^1.96.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "daups",
+				"aliases": [
+					"DAUPS",
+					"daups"
+				],
+				"extensions": [
+					".daups"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "daups-hover",
+				"aliases": [
+					"DAUPS-HOVER"
+				],
+				"extensions": [
+					".daups-hover"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "daups-docs",
+				"aliases": [
+					"DAUPS-DOCS"
+				],
+				"extensions": [
+					".daups-docs"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "daups",
+				"scopeName": "source.daups",
+				"path": "./syntaxes/daups.tmLanguage.json"
+			},
+			{
+				"language": "daups-hover",
+				"scopeName": "source.daups-hover",
+				"path": "./syntaxes/daups-hover.tmLanguage.json"
+			},
+			{
+				"language": "daups-docs",
+				"scopeName": "source.daups-docs",
+				"path": "./syntaxes/daups-docs.tmLanguage.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "daups.runDaups",
+				"title": "▷"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"command": "daups.runDaups",
+					"when": "resourceExtname == .daups",
+					"group": "navigation"
+				}
+			]
+		},
+		"themes": [
+			{
+				"label": "DAUPS Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/daups-color-theme.json"
+			}
+		],
+		"iconThemes": [
+			{
+				"id": "daups-icon-theme",
+				"label": "DAUPS Icon Theme",
+				"path": "./themes/icon-theme.json"
+			}
+		],
+		"onTypeFormatting": [
+			{
+				"language": "daups",
+				"autoFormatTriggerCharacters": [
+					"\n"
+				]
+			}
+		],
+		"documentFormatting": [
+			{
+				"language": "daups"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -w -p ./",
+		"lint": "eslint src",
+		"test": "vscode-test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^10.0.10",
+		"@types/node": "20.x",
+		"@types/vscode": "^1.96.0",
+		"@typescript-eslint/eslint-plugin": "^8.17.0",
+		"@typescript-eslint/parser": "^8.17.0",
+		"@vscode/test-cli": "^0.0.10",
+		"@vscode/test-electron": "^2.4.1",
+		"eslint": "^9.16.0",
+		"typescript": "^5.7.2"
+	},
+	"dependencies": {
+		"@pdf-lib/fontkit": "^1.1.1",
+		"fs": "^0.0.1-security",
+		"markdown-it": "^14.1.0",
+		"marked": "^15.0.12",
+		"node-pdftk": "^2.1.3",
+		"pdf-lib": "^1.17.1",
+		"puppeteer": "^24.9.0",
+		"shiki": "^0.14.2"
+	}
+}

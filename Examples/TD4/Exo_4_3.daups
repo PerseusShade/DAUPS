@@ -1,0 +1,33 @@
+function tabAlea(n : int, a : int, b : int) : array of int
+    T : array of int
+    i : int
+Begin
+    T <-- create_array(n)
+    for i <-- 0 to n - 1
+        T[i] <-- nombreAleatoire(a, b)
+    return T
+End
+
+function tabProduit(T : array of int) : int
+    produit, i : int
+Begin
+    produit <-- 1
+    for i <-- 0 to size(T) - 1
+        produit <-- produit * T[i]
+    return produit
+End
+
+Algo
+    a, b, n, i, produit : int
+    T : array of int
+Begin
+    print "Saisir les trois valeurs", "Saut-de-ligne"
+    get n
+    get a
+    get b
+    T <-- tabAlea(n, a, b)
+    produit <-- tabProduit(T)
+    for i <-- 0 to n - 1
+        print T[i], "Saut-de-ligne"
+    print produit, "Saut-de-ligne"
+End

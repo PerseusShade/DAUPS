@@ -1,0 +1,14 @@
+Algo
+    a, b, c : int
+Begin
+    print "Saisir un entier"
+    get a
+    print "Saisir un entier"
+    get b
+    print "Saisir un entier"
+    get c
+    if (a==(b+c) or b==(a+c) or c==(a+b)) then
+        print "oui"
+    else
+        print "non"
+End

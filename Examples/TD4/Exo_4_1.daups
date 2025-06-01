@@ -1,0 +1,33 @@
+Algo
+    taille, i, dessus, indice : int
+    somme, moyenne, grand : float
+    note : array of float
+Begin
+    get taille
+    note <-- create_array(taille)
+    somme <-- 0
+
+    for i <-- 0 to taille - 1
+        print "Note en position ", i+1, " ?"
+        get note[i]
+        somme <-- somme + note[i]
+
+    moyenne <-- somme / taille
+    print "la moyenne est", moyenne, "Saut-de-ligne"
+
+    dessus <-- 0
+    for i <-- 0 to taille - 1
+        if note[i] >= moyenne then
+            dessus <-- dessus + 1
+    print "le nombre de notes au-dessus de la moyenne est", dessus, "Saut-de-ligne"
+
+    grand <-- note[0]
+    indice <-- 0
+    for i <-- 1 to taille - 1
+        if note[i] > grand then
+            grand <-- note[i]
+            indice <-- i
+
+    print "le nombre maximum est", grand, "Saut-de-ligne"
+    print "il est en position", indice + 1, "Saut-de-ligne"
+End

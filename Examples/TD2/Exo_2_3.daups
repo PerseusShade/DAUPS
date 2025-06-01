@@ -1,0 +1,16 @@
+Algo
+# Est-ce un nombre premier ?
+    n, d, somme : int
+Begin
+    get n
+    d <-- 1
+    somme <-- 0
+    while (d<n)
+        if (n mod d) == 0 then
+            somme <-- somme + d
+        d <-- d+1
+    print "La somme des diviseurs est :"
+    print somme
+    if somme == 1 then
+        print "Ce nombre est premier."
+End

@@ -1,0 +1,26 @@
+Algo
+# Suite croissante ?
+    n : int
+    i : int # compteur
+    p : int # nombre précédemment saisi
+    c : int # nombre courant saisi
+    b : bool # vrai tant que la suite est triée
+Begin
+    n <-- 0
+    while (n <= 0)
+        get n
+    get c
+    i <-- 1 # On a déjà saisi un entier - reste (n-1)
+    b <-- True
+    while (i < n)
+        p <-- c # on stocke l'entier précédemment saisi
+        get c
+        if (p > c) then
+            # si l'entier est < au précédent
+            b <-- False # Valeurs non-ordonnées de manière croissante.
+        i <-- i + 1
+    if (b == True) then
+        print "Les", n, "valeurs sont triées de façon croissante."
+    else
+        print "Les", n, "valeurs ne sont pas triées."
+End

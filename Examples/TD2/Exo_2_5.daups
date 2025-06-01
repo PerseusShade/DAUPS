@@ -1,0 +1,15 @@
+Algo
+# Tous les multiples de 7 entre i et j
+    i, j : int
+Begin
+    print "Debut : "
+    get i
+    print "Fin : "
+    get j
+    while (i<j)
+        if ((i mod 7) == 0) then
+            print i
+            print " est un multiple de 7."
+            print "Saut-de-ligne"
+        i <-- i+1
+End

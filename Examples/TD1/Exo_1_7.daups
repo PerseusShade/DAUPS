@@ -1,0 +1,19 @@
+Algo
+    a, b, c, D, x1, x2 : float
+Begin
+    print "Quel est le parametre a ?"
+    get a
+    print "Quel est le parametre b ?"
+    get b
+    print "Quel est le parametre c ?"
+    get c
+    D <-- (b*b - 4*a*c)
+    if (D < 0) then
+        print "Delta est negatif et l'equation n'admet aucune racine reelle"
+    else if D == 0 then
+        print "Delta = 0 et l'equation admet une solution double x = ", -b/(2*a)
+    else
+        x1 <-- (-b - SQRT(D)) / (2*a)
+        x2 <-- (-b + SQRT(D)) / (2*a)
+        print "Delta positif, l'equation admet 2 solutions reelles et distinctes", x1, " et ", x2
+End

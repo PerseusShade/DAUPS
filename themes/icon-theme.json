@@ -1,0 +1,13 @@
+{
+    "iconDefinitions": {
+        "daups-icon": {
+        "iconPath": "../icon.png"
+        }
+    },
+    "fileExtensions": {
+        "daups": "daups-icon"
+    },
+    "languageIds": {
+        "daups": "daups-icon"
+    }
+}

@@ -1,0 +1,58 @@
+function pgcdParDiviseurs(a : int, b : int) : int
+        pgcd : int
+    Begin
+        pgcd <-- b
+        while (pgcd > 1)
+            if (a mod pgcd == 0 and b mod pgcd == 0) then
+                return pgcd
+            pgcd <-- pgcd - 1
+        return 1
+    End
+
+function maximum(a : int, b : int) : int
+    Begin
+        if (a > b) then
+            return a
+        else
+            return b
+    End
+
+function minimum(a : int, b : int) : int
+    Begin
+        if (a < b) then
+            return a
+        else
+            return b
+    End
+
+function pgcdParDifferences(a : int, b : int) : int
+        diff : int
+    Begin
+        diff <-- a - b
+        while (diff > 0)
+            a <-- maximum(diff, b)
+            b <-- minimum(diff, b)
+            diff <-- a - b
+        return a
+    End
+
+function pgcdParEuclide(a : int, b : int) : int
+        reste : int
+    Begin
+        reste <-- a mod b
+        while (reste > 0)
+            a <-- b
+            b <-- reste
+            reste <-- a mod b
+        return b
+    End
+
+Algo
+    a, b : int
+Begin
+    get a
+    get b
+    print pgcdParDiviseurs(a, b), "Saut-de-ligne"
+    print pgcdParDifferences(a, b), "Saut-de-ligne"
+    print pgcdParEuclide(a, b)
+End

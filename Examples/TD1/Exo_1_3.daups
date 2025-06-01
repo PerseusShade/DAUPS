@@ -1,0 +1,8 @@
+Algo
+    x, y : float
+Begin
+    print "donnez une valeur entiere"
+    get x
+    y <-- 3*x+1
+    print y
+End

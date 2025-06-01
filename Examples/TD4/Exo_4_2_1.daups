@@ -1,0 +1,12 @@
+Algo
+    i, long : int
+    tab : array of int
+Begin
+    get long
+    tab <-- create_array(long)
+
+    for i <-- 0 to long - 1
+        get tab[i]
+        if tab[i] >= 0 then
+            print tab[i], "Saut-de-ligne"
+End

@@ -1,0 +1,17 @@
+function cube(x : float) : float
+    Begin
+        return x ** 3
+    End
+
+function volume(r : float) : float
+    Begin
+        return (4 / 3) * Pi * cube(r)
+    End
+
+Algo
+    r : float
+Begin
+    print "Saisir le rayon"
+    get r
+    print volume(r)
+End
