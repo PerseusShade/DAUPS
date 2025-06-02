@@ -1,6 +1,6 @@
 # DAUPS Documentation Site
 
-This repository hosts the official documentation website for the **DAUPS programming language**.
+This repository hosts the documentation website for the **DAUPS programming language**.
 
 📦 Main language repository: [github.com/PerseusShade/DAUPS](https://github.com/PerseusShade/DAUPS)
 
