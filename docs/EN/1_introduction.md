@@ -25,7 +25,7 @@ DAUPS was designed to:
 
 To run DAUPS code:
 
-1. Install the official extension from the Visual Studio Code marketplace: [https://vscode.com/extension](https://vscode.com/extension).
+1. Install the extension from the Visual Studio Code marketplace: [https://marketplace.visualstudio.com/items?itemName=PerseusShade.daups](https://marketplace.visualstudio.com/items?itemName=PerseusShade.daups).
 2. Create a new file with the `.daups` extension.
 3. Write your algorithm following the language's syntax.
 4. Click the **▷** button in the top bar to launch the interpreter.

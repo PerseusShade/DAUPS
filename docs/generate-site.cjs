@@ -158,7 +158,7 @@ const MarkdownIt = require('markdown-it');
         const downloadBtn    = document.getElementById('download-btn');
         const downloadMenu = document.createElement('div');
         const downloadMenuHTML = ${JSON.stringify(
-            '<div><a href="https://myextension.github.com" target="_blank">Extension</a></div>\n' + downloadMenuHTML
+            '<div><a href="https://marketplace.visualstudio.com/items?itemName=PerseusShade.daups" target="_blank">Extension</a></div>\n' + downloadMenuHTML
         )};
         downloadMenu.classList.add('download-menu');
         document.body.appendChild(downloadMenu);
