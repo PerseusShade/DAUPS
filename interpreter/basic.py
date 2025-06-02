@@ -2323,6 +2323,6 @@ if __name__ == "__main__":
     except Exception:
         print("\nAn unknown error has occurred.")
         print("Please check your code. If the error persists, it might be an issue with the compiler.")
-        print("You can report it on GitHub: https://github.com/tonutilisateur/daups-extension/issues.")
+        print("You can report it on GitHub: https://github.com/PerseusShade/DAUPS-ext/issues.")
         print("Feel free to contact me if you're experiencing this unexpected issue — I'll do my best to fix it as soon as possible.")
         sys.exit(1)
