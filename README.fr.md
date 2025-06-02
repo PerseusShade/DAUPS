@@ -42,7 +42,7 @@ Si Python n'est pas installé, téléchargez-le ici : [https://www.python.org/do
 
 ## 📦 Notes de version
 
-### 1.0.2
+### 1.0.3
 
 Première version de l'extension **DAUPS**.
 

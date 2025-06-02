@@ -42,7 +42,7 @@ If not installed, download it from: [https://www.python.org/downloads/](https://
 
 ## 📦 Release Notes
 
-### 1.0.2
+### 1.0.3
 
 Initial release of the **DAUPS** extension.
 
