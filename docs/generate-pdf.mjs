@@ -60,6 +60,11 @@ async function genChapterPdfs(lang) {
                 'margin:0',
                 'margin-bottom:1em'
             ].join(';');
+
+            Array.from(clone.querySelectorAll('a')).forEach(a => {
+                a.setAttribute('target', '_blank');
+            });
+
             document.body.innerHTML = '';
             document.body.appendChild(h1);
             document.body.appendChild(clone);

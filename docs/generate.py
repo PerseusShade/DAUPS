@@ -24,8 +24,8 @@ def run_command(command):
 
 def main():
     commands = [
-        ["node", "docs/generate-pdf.mjs"],
         ["node", "docs/generate-site.cjs"],
+        ["node", "docs/generate-pdf.mjs"],
     ]
 
     for cmd in commands:
