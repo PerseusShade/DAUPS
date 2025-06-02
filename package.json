@@ -2,10 +2,14 @@
 	"name": "daups",
 	"displayName": "DAUPS",
 	"description": "Support for DAUPS",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publisher": "PerseusShade",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/PerseusShade/DAUPS-ext"
+	},
 	"type": "module",
-	"icon": "icon.png",
+	"icon": "logo.png",
 	"engines": {
 		"vscode": "^1.96.0"
 	},
@@ -24,7 +28,11 @@
 				"extensions": [
 					".daups"
 				],
-				"configuration": "./language-configuration.json"
+				"configuration": "./language-configuration.json",
+				"icon": {
+					"light": "icon.png",
+					"dark": "icon.png"
+				}
 			},
 			{
 				"id": "daups-hover",
@@ -79,20 +87,6 @@
 				}
 			]
 		},
-		"themes": [
-			{
-				"label": "DAUPS Theme",
-				"uiTheme": "vs-dark",
-				"path": "./themes/daups-color-theme.json"
-			}
-		],
-		"iconThemes": [
-			{
-				"id": "daups-icon-theme",
-				"label": "DAUPS Icon Theme",
-				"path": "./themes/icon-theme.json"
-			}
-		],
 		"onTypeFormatting": [
 			{
 				"language": "daups",
@@ -115,6 +109,7 @@
 		"test": "vscode-test"
 	},
 	"devDependencies": {
+		"@pdf-lib/fontkit": "^1.1.1",
 		"@types/mocha": "^10.0.10",
 		"@types/node": "20.x",
 		"@types/vscode": "^1.96.0",
@@ -123,16 +118,15 @@
 		"@vscode/test-cli": "^0.0.10",
 		"@vscode/test-electron": "^2.4.1",
 		"eslint": "^9.16.0",
-		"typescript": "^5.7.2"
-	},
-	"dependencies": {
-		"@pdf-lib/fontkit": "^1.1.1",
 		"fs": "^0.0.1-security",
 		"markdown-it": "^14.1.0",
 		"marked": "^15.0.12",
 		"node-pdftk": "^2.1.3",
 		"pdf-lib": "^1.17.1",
 		"puppeteer": "^24.9.0",
-		"shiki": "^0.14.2"
-	}
+		"shiki": "^0.14.2",
+		"typescript": "^5.7.2",
+		"sharp": "^0.34.2"
+	},
+	"dependencies": {}
 }
