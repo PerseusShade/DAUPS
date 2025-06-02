@@ -2,6 +2,6 @@
 
 All notable changes to the "pseudocode" extension will be documented in this file.
 
-## [Unreleased]
+## 1.0.2
 
 - Initial release

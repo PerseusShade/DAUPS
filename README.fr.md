@@ -33,14 +33,6 @@ python3 --version
 
 Si Python n'est pas installé, téléchargez-le ici : [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
-## 🔧 Paramètres de l'extension
-
-Cette extension ajoute les paramètres suivants :
-
-- `daups.enableUnusedVariableHighlight` : Active/désactive la mise en évidence des variables inutilisées (par défaut : `true`)
-- `daups.pythonInterpreterPath` : Chemin vers l'interpréteur Python (optionnel, par défaut : `python3`)
-- `daups.showExecutionOutput` : Affiche automatiquement le panneau de sortie après l'exécution d'un script (par défaut : `true`)
-
 ## 🐞 Problèmes connus
 
 - L'extension ne propose pas encore de vérification des erreurs de type en temps réel.
@@ -50,7 +42,7 @@ Cette extension ajoute les paramètres suivants :
 
 ## 📦 Notes de version
 
-### 1.0.0
+### 1.0.2
 
 Première version de l'extension **DAUPS**.
 
