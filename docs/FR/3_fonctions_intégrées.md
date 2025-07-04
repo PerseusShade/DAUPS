@@ -9,7 +9,7 @@ Le langage **DAUPS** propose plusieurs **fonctions intégrées** (*builtins*), a
 | `print`           | Affiche un ou plusieurs éléments sans retour à la ligne      | 0 ou plus (illimité)   | `print "Salut", x`                        |
 | `get`             | Lit une valeur utilisateur et l'affecte à une variable       | 1 (obligatoire)        | `get x` ou `get tab[i][j]`               |
 | `create_array`    | Crée un tableau vide de taille donnée                        | ≥1 (illimité)          | `tab <-- create_array(3, 4)`             |
-| `run`             | Exécute un autre fichier `.dps` (ou `.txt`)                  | 1 (chemin string)      | `run "exemple.dps"`                      |
+| `run`             | Exécute un autre fichier `.daups` (ou `.txt`)                  | 1 (chemin string)      | `run "exemple.daups"`                      |
 | `SQRT`            | Calcule la racine carrée d'un nombre                         | 1 (numérique)          | `print SQRT(25)`                         |
 | `nombreAleatoire` | Génère un entier aléatoire entre deux bornes                 | 2 (numériques)         | `nombreAleatoire(1, 100)`                |
 | `size`            | Retourne la taille d'un tableau ou d'une dimension spécifique| 1 ou 2 (tableau, [dim])| `size(tab)` ou `size(tab, 1)`            |
@@ -55,10 +55,10 @@ Crée un tableau vide à une ou plusieurs dimensions.
 
 Exécute un fichier DAUPS externe.
 
-- **Arguments** : 1 (`string` - chemin vers un fichier `.dps` ou `.txt`)
+- **Arguments** : 1 (`string` - chemin vers un fichier `.daups` ou `.txt`)
 - **Exemple** :
   ```daups-docs
-  run "mon_fichier.dps"
+  run "mon_fichier.daups"
   ```
 
 ### 🔹 `SQRT(valeur)`

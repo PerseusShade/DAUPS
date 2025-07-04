@@ -9,7 +9,7 @@ The **DAUPS** language provides several **built-in** functions, accessible direc
 | `print`            | Displays one or more items without automatically adding a newline | 0 or more (unlimited)   | `print "Hello", x`                         |
 | `get`              | Reads a user input and assigns it to a variable               | 1 (mandatory)           | `get x` or `get tab[i][j]`                 |
 | `create_array`     | Creates an empty array of a given size                         | ≥1 (unlimited)          | `tab <-- create_array(3, 4)`              |
-| `run`              | Executes another `.dps` (or `.txt`) file                       | 1 (string path)         | `run "example.dps"`                        |
+| `run`              | Executes another `.daups` (or `.txt`) file                       | 1 (string path)         | `run "example.daups"`                        |
 | `SQRT`             | Computes the square root of a number                            | 1 (numeric)             | `print SQRT(25)`                           |
 | `nombreAleatoire`  | Generates a random integer between two bounds                  | 2 (numeric)             | `nombreAleatoire(1, 100)`                 |
 | `size`             | Returns the size of an array or a specific dimension           | 1 or 2 (array, [dim])   | `size(tab)` or `size(tab, 1)`             |
@@ -55,10 +55,10 @@ Creates an empty array with one or more dimensions.
 
 Executes an external DAUPS file.
 
-- **Arguments**: 1 (`string` – path to a `.dps` or `.txt` file)
+- **Arguments**: 1 (`string` – path to a `.daups` or `.txt` file)
 - **Example**:
   ```daups-docs
-  run "my_file.dps"
+  run "my_file.daups"
   ```
 
 ### 🔹 `SQRT(value)`

@@ -25,7 +25,7 @@ DAUPS a été conçu pour :
 
 Pour exécuter du code DAUPS :
 
-1. Installez l'extension depuis le marketplace Visual Studio Code : [https://marketplace.visualstudio.com/items?itemName=PerseusShade.daups](https://marketplace.visualstudio.com/items?itemName=PerseusShade.daups).
+1. Installez l'extension depuis le [marketplace Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=PerseusShade.daups).
 2. Créez un nouveau fichier avec l'extension `.daups`.
 3. Rédigez votre algorithme en respectant la syntaxe du langage.
 4. Cliquez sur le bouton **▷** dans la barre supérieure pour lancer l'interpréteur.
@@ -38,5 +38,4 @@ L'environnement signale automatiquement les erreurs de syntaxe, de typage ou d'e
 - **Extension VS Code** : améliore la lisibilité et l'interaction avec le code.
 - **Documentation en ligne** : régulièrement mise à jour et disponible dans plusieurs langues.
 
-Si vous avez une question, une suggestion ou constatez une erreur dans cette documentation, vous pouvez créer une *issue* ici :
-[https://github.com/PerseusShade/DAUPS-docs/issues](https://github.com/PerseusShade/DAUPS-docs/issues)
+Si vous avez une question, une suggestion ou constatez une erreur dans cette documentation, vous pouvez [créer une *issue* sur GitHub](https://github.com/PerseusShade/DAUPS-docs/issues).
