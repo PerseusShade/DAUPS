@@ -2,17 +2,9 @@ import subprocess
 import sys
 
 def run_command(command):
-    """Exécute une commande shell et gère les erreurs et les encodages."""
     try:
         print(f"Exécution de : {' '.join(command)}")
-        result = subprocess.run(
-            command,
-            check=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            encoding='utf-8',
-            errors='replace'
-        )
+        result = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding='utf-8', errors='replace')
         print(result.stdout)
         if result.stderr:
             print("Messages d'erreur (stderr) :\n", result.stderr, file=sys.stderr)
