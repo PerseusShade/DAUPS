@@ -6,5 +6,6 @@ This repository hosts the documentation website for the **DAUPS programming lang
 
 🧩 VS Code extension: [github.com/PerseusShade/DAUPS-ext](https://github.com/PerseusShade/DAUPS-ext)
 
-Visit the live documentation here:
-🌐 [perseusshade.github.io/DAUPS-docs](https://perseusshade.github.io/DAUPS-docs/EN.html)
+🌐 Live documentation: [perseusshade.github.io/DAUPS-docs](https://perseusshade.github.io/DAUPS-docs/EN.html)
+
+💻 Try the web runner here: [perseusshade.github.io/DAUPS-web-runner](https://perseusshade.github.io/DAUPS-web-runner)
