@@ -7,7 +7,7 @@
 
 ## Description
 
-Ceci est le README de l'extension **DAUPS**, qui offre un support pour le langage personnalisé **daups** — un langage simplifié de type pseudocode, utilisé pour l'apprentissage et l'expérimentation de concepts algorithmiques.
+Ceci est le README de l'extension **DAUPS**, qui offre un support pour le langage personnalisé **daups** - un langage simplifié de type pseudocode, utilisé pour l'apprentissage et l'expérimentation de concepts algorithmiques.
 
 ## 📦 Informations sur l'extension
 
@@ -19,7 +19,9 @@ Cette extension Visual Studio Code inclut :
 - Décorations en ligne et diagnostics.
 - Exécution de scripts via un interpréteur Python embarqué.
 
-Documentation du langage **daups** : [https://perseusshade.github.io/DAUPS-docs/FR.html](https://perseusshade.github.io/DAUPS-docs/FR.html)
+Documentation du langage **daups** : [https://perseusshade.github.io/DAUPS-docs/fr/](https://perseusshade.github.io/DAUPS-docs/fr/)
+
+Web runner pour le langage **daups** : [perseusshade.github.io/DAUPS-web-runner/fr/](https://perseusshade.github.io/DAUPS-web-runner/fr/)
 
 ## ⚙️ Prérequis
 
@@ -42,9 +44,9 @@ Si Python n'est pas installé, téléchargez-le ici : [https://www.python.org/do
 
 ## 📦 Notes de version
 
-### 1.0.3
+### 1.0.4
 
-Première version de l'extension **DAUPS**.
+Mise à jour de maintenance - corrections de bugs mineurs et petites améliorations de stabilité.
 
 ## 👤 À propos de l'auteur
 

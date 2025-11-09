@@ -19,7 +19,9 @@ This Visual Studio Code extension includes:
 - Inline decorations and diagnostics.
 - Script execution via an embedded Python-based interpreter.
 
-Documentation of the **daups** language: [https://perseusshade.github.io/DAUPS-docs/EN.html](https://perseusshade.github.io/DAUPS-docs/EN.html)
+Documentation of the **daups** language: [https://perseusshade.github.io/DAUPS-docs/en/](https://perseusshade.github.io/DAUPS-docs/en/)
+
+Web runner for the **daups** language: [perseusshade.github.io/DAUPS-web-runner/en/](https://perseusshade.github.io/DAUPS-web-runner/en/)
 
 ## ⚙️ Requirements
 
@@ -42,9 +44,9 @@ If not installed, download it from: [https://www.python.org/downloads/](https://
 
 ## 📦 Release Notes
 
-### 1.0.3
+### 1.0.4
 
-Initial release of the **DAUPS** extension.
+Maintenance update - minor bug fixes and small stability improvements.
 
 ## 👤 About the Author
 

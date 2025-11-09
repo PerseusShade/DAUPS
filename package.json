@@ -2,7 +2,7 @@
 	"name": "daups",
 	"displayName": "DAUPS",
 	"description": "Support for DAUPS",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"publisher": "PerseusShade",
 	"repository": {
 		"type": "git",
