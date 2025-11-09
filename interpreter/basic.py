@@ -83,8 +83,11 @@ class RTError(Error):
         return 'Traceback (most recent call last):\n' + result
 
 class IndentationError(Error):
-    def __init__(self, pos_start, pos_end, indent, exp_indent):
-        super().__init__(pos_start, pos_end, 'Indentation Error', f"Expected indentation level {indent}, got {exp_indent}")
+    def __init__(self, pos_start, pos_end, indent=0, exp_indent=0, details=""):
+        if details != "":
+            super().__init__(pos_start, pos_end, 'Indentation Error', details)
+        else:
+            super().__init__(pos_start, pos_end, 'Indentation Error', f"Expected indentation level {indent}, got {exp_indent}")
 
 
 ######################################
@@ -280,12 +283,12 @@ class Lexer:
         count = 0
         pos_start = self.pos.copy()
         while self.current_char in (' ', '\t'):
-            count += 1 if self.current_char == '\t' else 1 / 4
+            count += 4 if self.current_char == '\t' else 1
             self.advance()
 
-        if not count.is_integer():
-            return None, IndentationError(pos_start, self.pos, "Indentation level must be a multiple of 4 spaces or tabs")
-        return int(count), None
+        if count % 4 != 0:
+            return None, IndentationError(pos_start, self.pos, details=f"Indentation level must be a multiple of 4 spaces or tabs, got {count} spaces")
+        return (count / 4), None
 
     def make_number(self):
         numstr = ''
@@ -604,7 +607,7 @@ class ParseResult:
 
 
 ######################################
-# Parser
+# PARSER
 ######################################
 
 class Parser:
@@ -1792,7 +1795,19 @@ class BuiltInFunction(BaseFunction):
 
     def execute_print(self, exec_ctx):
         args = exec_ctx.symbol_table.get("args").elements
-        print(" ".join(str(arg) for arg in args), end='')
+        s = ""
+        first = True
+        for arg in args:
+            a = str(arg)
+            if a == "\n":
+                s += "\n"
+                first = True
+            else:
+                if not first:
+                    s += " "
+                s += a
+                first = False
+        print(s)
         return RTResult().success(Number.null)
     execute_print.arg_names = []
 
