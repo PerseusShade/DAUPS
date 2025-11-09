@@ -58,8 +58,25 @@ const MarkdownIt = require('markdown-it');
 
     const locales = JSON.parse(await fs.readFile(path.join(__dirname, 'locales.json'), 'utf8'));
 
+    const downloadMenuLinks = languageDirs.map(ld => {
+        const lang = ld.name;
+        const coverTop = locales[lang]?.coverTop || lang;
+        const sanitized = coverTop.replace(/[^a-z0-9_\-]/gi, '_');
+        const fileName = `DAUPS_${sanitized}_${lang}.pdf`;
+        return `<div>
+            <a href="#"
+               class="pdf-link"
+               data-lang="${lang}"
+               data-file="${fileName}">
+                PDF (<i>${lang.toUpperCase()}</i>)
+            </a>
+        </div>`;
+    }).join('');
+
+    const downloadMenuCombined = '<div><a href="https://marketplace.visualstudio.com/items?itemName=PerseusShade.daups" target="_blank">Extension</a></div>\n' + downloadMenuLinks;
+
     for (const langDir of languageDirs) {
-        const langName = langDir.name;
+        const langName = langDir.name.toLowerCase();
         const inputPath = path.join(docsPath, langName);
         const files = (await fs.readdir(inputPath))
             .filter((f) => f.endsWith('.md'))
@@ -92,43 +109,27 @@ const MarkdownIt = require('markdown-it');
                 mainContent += `<div class="separator"></div>`;
             }
         }
-
-        const downloadMenuHTML = languageDirs.map(ld => {
-            const lang = ld.name;
-            const coverTop = locales[lang]?.coverTop || lang;
-            const sanitized = coverTop.replace(/[^a-z0-9_\-]/gi, '_');
-            const fileName = `DAUPS_${sanitized}_${lang}.pdf`;
-            return `<div>
-                <a href="#"
-                   class="pdf-link"
-                   data-lang="${lang}"
-                   data-file="${fileName}">
-                    PDF (<i>${lang.toUpperCase()}</i>)
-                </a>
-            </div>`;
-        }).join('');
+        const rel = '../';
 
         const finalHtml = `<!DOCTYPE html>
 <html lang="${langName}">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Documentation DAUPS (${langName})</title>
-    <link rel="icon" href="logo.png" type="image/svg+xml">
-    <link rel="stylesheet" href="style.css">
+    <title>Documentation DAUPS (${langName.toUpperCase()})</title>
+    <link rel="icon" href="${rel}logo.png" type="image/svg+xml">
+    <link rel="stylesheet" href="${rel}style.css">
 </head>
 <body>
     <header>
         <div class="logo-wrapper">
-            <img src="logo.png" alt="Logo DAUPS" class="logo-img">
-            <span class="logo-text">DAUPS ${locales[langName]?.coverTop || 'Documentation'}</span>
+            <img src="${rel}logo.png" alt="Logo DAUPS" class="logo-img">
+            <span class="logo-text">DAUPS ${locales[langName.toUpperCase()]?.coverTop || 'Documentation'}</span>
         </div>
         <div class="controls">
-            <!-- A faire plus tard, onlineshell
-            <a href="https://todoonlineshell.com" target="_blank" class="play-button">
+            <a href="https://perseusshade.github.io/DAUPS-web-runner/${langName}/" target="_blank" class="play-button" aria-label="Run example">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" class="bi bi-play-circle"><circle cx="12" cy="12" r="10"/><path d="m10 8 6 4-6 4z"/></svg>
             </a>
-            -->
             <a href="https://github.com/PerseusShade/DAUPS-docs" target="_blank" class="github-button" aria-label="GitHub">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
@@ -152,14 +153,14 @@ const MarkdownIt = require('markdown-it');
                 <span class="slider"></span>
             </label>
 
-            <select id="lang-select" class="lang-select" onchange="location.href=this.value + '.html'">
-                ${languageDirs.map(ld => `<option value="${ld.name}" ${ld.name === langName ? 'selected' : ''}>${ld.name}</option>`).join('')}
+            <select id="lang-select" class="lang-select" onchange="location.href='../' + this.value.toLowerCase()">
+                ${languageDirs.map(ld => `<option value="${ld.name}" ${ld.name === langName.toUpperCase() ? 'selected' : ''}>${ld.name}</option>`).join('')}
             </select>
         </div>
     </header>
 
     <div class="page-wrapper">
-        <button class="menu-toggle" id="menuToggle">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
             <span></span>
             <span></span>
             <span></span>
@@ -180,27 +181,26 @@ const MarkdownIt = require('markdown-it');
     </div>
 
     <script>
-        // Restaurer le thème au chargement
+        const REL = '${rel}';
+
         const savedTheme = localStorage.getItem('theme');
         const isDark = savedTheme === 'dark';
         document.documentElement.classList.toggle('dark', isDark);
         const themeToggleInput = document.getElementById('theme-toggle');
         if (themeToggleInput) themeToggleInput.checked = isDark;
 
-        // Changement thème
         const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('change', () => {
-            const dark = themeToggle.checked;
-            document.documentElement.classList.toggle('dark', dark);
-            localStorage.setItem('theme', dark ? 'dark' : 'light');
-        });
+        if (themeToggle) {
+            themeToggle.addEventListener('change', () => {
+                const dark = themeToggle.checked;
+                document.documentElement.classList.toggle('dark', dark);
+                localStorage.setItem('theme', dark ? 'dark' : 'light');
+            });
+        }
 
-        // Menu téléchargement
         const downloadBtn    = document.getElementById('download-btn');
         const downloadMenu = document.createElement('div');
-        const downloadMenuHTML = ${JSON.stringify(
-            '<div><a href="https://marketplace.visualstudio.com/items?itemName=PerseusShade.daups" target="_blank">Extension</a></div>\n' + downloadMenuHTML
-        )};
+        const downloadMenuHTML = ${JSON.stringify(downloadMenuCombined)};
         downloadMenu.classList.add('download-menu');
         document.body.appendChild(downloadMenu);
         downloadMenu.innerHTML = downloadMenuHTML;
@@ -222,7 +222,7 @@ const MarkdownIt = require('markdown-it');
                 const lang = link.dataset.lang;
                 const fileName = link.dataset.file;
                 try {
-                    const response = await fetch(\`pdf/\${fileName}\`);
+                    const response = await fetch(\`\${REL}pdf/\${fileName}\`);
                     if (!response.ok) throw new Error('Fichier introuvable');
                     const blob = await response.blob();
                     const url = window.URL.createObjectURL(blob);
@@ -234,14 +234,13 @@ const MarkdownIt = require('markdown-it');
                     a.click();
                     document.body.removeChild(a);
                     window.URL.revokeObjectURL(url);
-                } catch (e) {
-                    console.error('Erreur lors du téléchargement du PDF:', e);
+                } catch (err) {
+                    console.error('Erreur lors du téléchargement du PDF:', err);
                     alert("Le fichier PDF n'a pas pu être téléchargé.");
                 }
             });
         });
 
-        // Sidebar & toggle
         const sidebar        = document.querySelector(".sidebar");
         const main             = document.querySelector("main");
         const menuToggle = document.getElementById("menuToggle");
@@ -266,12 +265,13 @@ const MarkdownIt = require('markdown-it');
             setTimeout(() => main.style.transition = "", 300);
         }
 
-        menuToggle.addEventListener("click", () => {
-            if (sidebar.classList.contains("collapsed")) openSidebar();
-            else                                                         collapseSidebar();
-        });
+        if (menuToggle) {
+            menuToggle.addEventListener("click", () => {
+                if (sidebar.classList.contains("collapsed")) openSidebar();
+                else collapseSidebar();
+            });
+        }
 
-        // IntersectionObserver
         const links     = document.querySelectorAll('.sidebar a');
         const sections = Array.from(document.querySelectorAll('main section'));
         const observer = new IntersectionObserver((entries) => {
@@ -298,7 +298,6 @@ const MarkdownIt = require('markdown-it');
             document.querySelectorAll('section').forEach(s => io.observe(s));
         });
 
-        // Sur petits écrans, on ferme au clic sur un lien
         if (window.innerWidth <= 600) {
             document.querySelectorAll(".sidebar a").forEach(link =>
                 link.addEventListener("click", collapseSidebar)
@@ -308,9 +307,10 @@ const MarkdownIt = require('markdown-it');
 </body>
 </html>
 `;
-
-        await fs.writeFile(path.join(outputBase, `${langName}.html`), finalHtml, 'utf8');
+        const outDir = path.join(outputBase, langName);
+        await fs.mkdir(outDir, { recursive: true });
+        await fs.writeFile(path.join(outDir, 'index.html'), finalHtml, 'utf8');
     }
 
-    console.log('✅ Conversion terminée dans le dossier docs/site');
+    console.log('✅ Conversion terminée - générés');
 })();
